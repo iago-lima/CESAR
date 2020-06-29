@@ -18,6 +18,27 @@ void addNode(struct Node** hRef, string data){
 	*hRef = newNode;
 }
 
+void appendNode(Node** hRef, string data){
+	Node* newNode = new Node;
+	
+	Node *last = *hRef;
+
+	newNode->message = data;
+    newNode->next = NULL;
+    
+	if (*hRef == NULL)  
+    {  
+        *hRef = newNode; 
+        return;
+    }
+    
+    while (last->next != NULL){  
+        last = last->next;
+    }
+    last->next = newNode;  
+
+}
+
 void printList(struct Node *list){
 	while(list != NULL){
 		cout <<  list->message << "-> ";
@@ -51,11 +72,11 @@ int main(int argc, char const *argv[])
 	struct Node* head = NULL;
 
 	addNode(&head, "M1");
-	addNode(&head, "M2");
-	addNode(&head, "M3");
-	addNode(&head, "M2");
-	addNode(&head, "M4");
-	addNode(&head, "M2");
+	appendNode(&head, "M2");
+	appendNode(&head, "M3");
+	appendNode(&head, "M2");
+	appendNode(&head, "M4");
+	appendNode(&head, "M2");
 	
 	cout << "Lista antes da remoção" << endl << endl;
 	printList(head);
