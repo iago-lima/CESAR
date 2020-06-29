@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
 	
 	cout << "Lista antes da remoção" << endl << endl;
 	printList(head);
-	cout << "Lista antes da remoção" << endl << endl;
+	cout << "Lista depois da remoção" << endl << endl;
 	deleteDuplicate(head);
 	printList(head);
 	
